@@ -1,7 +1,7 @@
  <?php
 $servername = "localhost";
 $username = "library";
-$password = "";
+$password = "321Kirjasto";
 $dbname = "libraryDB";
 
 // Create connection
