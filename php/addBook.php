@@ -12,9 +12,9 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-
+// values will come from webform
 $sql = "INSERT INTO Books (isbn, title, author)
-VALUES ('9781119527077', 'SQL for Dummies', 'Allen G. Taylor')";
+VALUES ($isbn, $title, $author)";
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";

@@ -11,7 +11,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// sql to create tables
+// values will come from webform
 $sql = "INSERT INTO Laina (Books_isbn, User_id)
 VALUES ($isbn, $user)";
 
