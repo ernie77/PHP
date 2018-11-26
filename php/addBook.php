@@ -1,9 +1,9 @@
 kirja
 
 <?php
-$servername = "localhost";
-$username = "library";
-$password = "321Kirjasto";
+$servername = "127.0.0.1:49227";
+$username = "azure";
+$password = "6#vWHD_$";
 $dbname = "libraryDB";
 
 // Create connection
