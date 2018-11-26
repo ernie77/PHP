@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 // sql to create tables
 $sql[0] = "CREATE TABLE Books (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-isbn INT(13) NOT NULL,
+isbn VARCHAR(255) NOT NULL,
 title VARCHAR(255) NOT NULL,
 author VARCHAR(255) NOT NULL
 )";
