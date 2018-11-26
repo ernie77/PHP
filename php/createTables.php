@@ -25,8 +25,8 @@ lastname VARCHAR(255) NOT NULL
 )";
 $sql = "CREATE TABLE Laina (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-Books_isbn INT(13) FOREIGN KEY REFERENCES Books(isbn),
-User_id INT(6) FOREIGN KEY REFERENCES User(id)
+Books_isbn INT(13) Books(isbn),
+User_id INT(6) User(id)
 )";
 
 if ($conn->query($sql) === TRUE) {
