@@ -28,9 +28,8 @@ id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 Books_isbn INT(13) NOT NULL,
 User_id INT(6) NOT NULL
 )";
-foreach ($sql as $sql) {
-//for ($x = 0; $x <= 10; $x++) {
-if ($conn->query($sql]) === TRUE) {
+foreach ($sql as $item) {
+if ($conn->query($item) === TRUE) {
     echo "Table MyGuests created successfully";
 } else {
     echo "Error creating table: " . $conn->error;
