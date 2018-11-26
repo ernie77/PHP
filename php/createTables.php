@@ -25,7 +25,7 @@ lastname VARCHAR(255) NOT NULL
 )";
 $sql[2] = "CREATE TABLE Laina (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-Books_isbn INT(13) NOT NULL,
+Books_isbn VARCHAR(255) NOT NULL,
 User_id INT(6) NOT NULL
 )";
 foreach ($sql as $item) {
