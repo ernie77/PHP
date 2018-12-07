@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 }
 // values will come from webform
 $sql = "INSERT INTO User (firstname, lastname)
-VALUES ('$_POST["fname"];', '$_POST["lname"];')";
+VALUES ('$_POST["fname"]', '$_POST["lname"]')";
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
