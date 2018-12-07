@@ -26,7 +26,7 @@ if ($result->num_rows > 0) {
     	$sql = "SELECT * FROM laina WHERE books_isbn = $l";
     	$loan = $conn->query($sql);
     	if ($loan->num_rows > 0) {
-			echo "lainassa";
+			echo "   lainassa!";
 		}
       echo "<br>";
 	}
