@@ -17,7 +17,7 @@ $isbn=$_POST["isbn"];
 $title=$_POST["title"];
 $author=$_POST["author"];
 $sql = "INSERT INTO Books (isbn, title, author)
-VALUES ($isbn, $title, $author)";
+VALUES ('$isbn', '$title', '$author')";
 
 
 if ($conn->query($sql) === TRUE) {
