@@ -1,4 +1,5 @@
-<?php require 'test_input.php'
+<?php
+require('test_input.php');
 $servername = "127.0.0.1:49227";
 $username = "azure";
 $password = "6#vWHD_$";
