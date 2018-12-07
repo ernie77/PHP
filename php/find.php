@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 //$find will come from webform
 $find=mysqli_real_escape_string($conn, $_POST["find"]);
 $option=mysqli_real_escape_string($conn, $_POST["option"]);
-$sql = "SELECT * FROM Books WHERE '$option' LIKE '%$find%'";
+$sql = "SELECT * FROM Books WHERE $option LIKE '%$find%'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
