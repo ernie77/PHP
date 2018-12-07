@@ -1,6 +1,4 @@
-kirja
-
-<?php
+ <?php
 $servername = "127.0.0.1:49227";
 $username = "azure";
 $password = "6#vWHD_$";
@@ -12,15 +10,15 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-// values will come from webform
-$sql = "INSERT INTO Books (isbn, title, author)
-VALUES (echo $_POST["isbn"], echo $_POST["title"], echo $_POST["author"])";
 
+// values will come from webform
+$sql = "INSERT INTO Laina (Books_isbn, User_id)
+VALUES ($isbn, $user)";
 
 if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
+    echo "Table MyGuests created successfully";
 } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    echo "Error creating table: " . $conn->error;
 }
 
 $conn->close();
