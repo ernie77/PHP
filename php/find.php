@@ -9,7 +9,7 @@ $dbname = "libraryDB";
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+   die("Connection failed: " . $conn->connect_error);
 }
 //$find and $option will come from webform
 $find=test_input($_POST["find"]);
@@ -20,18 +20,18 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
-    while($row = $result->fetch_assoc()) {
-    	echo "isbn: " . $row["isbn"]. " - Title: " . $row["title"]. " Author: " . $row["author"];
-    	$laina=$row["isbn"];
-    	$sql = "SELECT * FROM Laina WHERE Books_isbn IS '$laina'";
+	while($row = $result->fetch_assoc()) {
+		echo "isbn: " . $row["isbn"]. " - Title: " . $row["title"]. " Author: " . $row["author"];
+    	$l = $row["isbn"];
+    	$sql = "SELECT * FROM Laina WHERE Books_isbn IS '$l'";
     	$loan = $conn->query($sql);
-    	if ($loan) {
-        echo "lainassa $laina";
-     }
-       echo "<br>";
-    }
+    	while ($r = $loan->fetch_assoc()) {
+			echo "lainassa";
+		}
+      echo "<br>";
+	}
 } else {
-    echo "0 results '$option'";
+   echo "0 results '$option'";
 }
 $conn->close();
 ?> 
