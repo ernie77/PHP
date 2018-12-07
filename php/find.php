@@ -25,8 +25,9 @@ if ($result->num_rows > 0) {
     	$l = $row["isbn"];
     	echo $l;
     	$sql = "SELECT * FROM laina WHERE books_isbn = $l";
+    	echo $sql;
     	$loan = $conn->query($sql);
-//    	echo "moi";
+		echo $loan;
 		$r = $loan["Books_isbn"];
 		echo $r;
 		
