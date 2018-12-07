@@ -27,5 +27,7 @@ if ($conn->query($sql) === TRUE) {
 }
 
 $conn->close();
+sleep(5);
+header('location: ../index.html');
+exit;
 ?>
-loadUrl('../index.html');
