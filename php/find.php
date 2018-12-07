@@ -11,16 +11,22 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-//$find will come from webform
+//$find and $option will come from webform
 $find=test_input($_POST["find"]);
 $option=test_input($_POST["option"]);
 $sql = "SELECT * FROM Books WHERE $option LIKE '%$find%'";
+
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo "isbn: " . $row["isbn"]. " - Title: " . $row["title"]. " Author: " . $row["author"]. "<br>";
+    	echo "isbn: " . $row["isbn"]. " - Title: " . $row["title"]. " Author: " . $row["author"];
+    	$sql = "SELECT * FROM Laina WHERE Book_isbn is '$row["isbn"]'";
+    	$loan = $conn->query($sql);
+    	while($r = $loan->fetch_assoc()) {
+        echo "lainassa"
+     }
     }
 } else {
     echo "0 results '$option'";
