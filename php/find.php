@@ -22,7 +22,7 @@ if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
     	echo "isbn: " . $row["isbn"]. " - Title: " . $row["title"]. " Author: " . $row["author"];
-    	$sql = "SELECT * FROM Laina WHERE Book_isbn is '$row["isbn"]'";
+    	$sql = "SELECT * FROM Laina WHERE Books_isbn is '$row["isbn"]'";
     	$loan = $conn->query($sql);
     	if ($loan) {
         echo "lainassa"
