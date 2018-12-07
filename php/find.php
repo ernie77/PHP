@@ -1,4 +1,4 @@
-<?php
+<?php require 'test_input.php'
 $servername = "127.0.0.1:49227";
 $username = "azure";
 $password = "6#vWHD_$";
@@ -11,8 +11,8 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 //$find will come from webform
-$find=mysqli_real_escape_string($conn, $_POST["find"]);
-$option=mysqli_real_escape_string($conn, $_POST["option"]);
+$find=test_input($_POST["find"]);
+$option=test_input($_POST["option"]);
 $sql = "SELECT * FROM Books WHERE $option LIKE '%$find%'";
 $result = $conn->query($sql);
 
