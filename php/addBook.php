@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 }
 
 $sql = "INSERT INTO Books (isbn, title, author)
-VALUES ('9781119527077', 'SQL for Dummies', 'Allen G. Taylor')";
+VALUES (echo $_POST["isbn"], echo $_POST["title"], echo $_POST["author"])";
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
