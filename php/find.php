@@ -28,6 +28,7 @@ if ($result->num_rows > 0) {
 //    	if ($loan["Books_isbn"] == $l) {
 	    	if (!empty($loan)) {
 			echo "lainassa";
+			unset($loan);
 		}
       echo "<br>";
 	}
