@@ -27,6 +27,8 @@ if ($result->num_rows > 0) {
     	$loan = $conn->query($sql);
 //    	echo "moi";
 		$r = $loan["Books_isbn"];
+		echo $r;
+		echo $l;
     	if ( $r == $l) {
 	//    	if (!empty($loan)) {
 			echo "lainassa";
