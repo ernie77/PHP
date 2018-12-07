@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 }
 // values will come from webform
 $sql = "INSERT INTO Books (isbn, title, author)
-VALUES (echo $_POST["isbn"], echo $_POST["title"], echo $_POST["author"])";
+VALUES ('$_POST["isbn"]', '$_POST["title"]', '$_POST["author"]')";
 
 
 if ($conn->query($sql) === TRUE) {
