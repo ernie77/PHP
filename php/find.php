@@ -23,18 +23,10 @@ if ($result->num_rows > 0) {
 	while($row = $result->fetch_assoc()) {
 		echo "isbn: " . $row["isbn"]. " - Title: " . $row["title"]. " Author: " . $row["author"];
     	$l = $row["isbn"];
-    	echo $l;
     	$sql = "SELECT * FROM laina WHERE books_isbn = $l";
-    	echo $sql;
     	$loan = $conn->query($sql);
-		echo $loan;
-		$r = $loan["Books_isbn"];
-		echo $r;
-		
-    	if ( $r == $l) {
-	//    	if (!empty($loan)) {
+    	if ($loan->num_rows > 0) {
 			echo "lainassa";
-			unset($r);
 		}
       echo "<br>";
 	}
