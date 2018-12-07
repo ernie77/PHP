@@ -26,10 +26,9 @@ if ($result->num_rows > 0) {
 	while($row = $result->fetch_assoc()) {
 		echo "isbn: " . $row["isbn"]. " - Title: " . $row["title"]. " Author: " . $row["author"];
     	$l = $row["isbn"];
-    	echo $l;
     	$sql = "SELECT * FROM Laina WHERE Books_isbn IS '$l'";
     	$loan = $conn->query($sql);
-    	if ($loan->fetch_assoc()) {
+    	if (!empty($loan)) {
 			echo "lainassa";
 		}
       echo "<br>";
