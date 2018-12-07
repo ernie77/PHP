@@ -24,7 +24,7 @@ if ($result->num_rows > 0) {
 		echo "isbn: " . $row["isbn"]. " - Title: " . $row["title"]. " Author: " . $row["author"];
     	$l = $row["isbn"];
     	echo $l;
-    	$sql = "SELECT * FROM Laina, Books WHERE Laina.Books_isbn = Books.isbn";
+    	$sql = "SELECT * FROM laina WHERE books_isbn = $l";
     	$loan = $conn->query($sql);
 //    	echo "moi";
 		$r = $loan["Books_isbn"];
