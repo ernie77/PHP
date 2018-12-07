@@ -22,7 +22,7 @@ if ($result->num_rows > 0) {
         echo "isbn: " . $row["isbn"]. " - Title: " . $row["title"]. " Author: " . $row["author"]. "<br>";
     }
 } else {
-    echo "0 results";
+    echo "0 results $option";
 }
 $conn->close();
 ?> 
