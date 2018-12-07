@@ -25,7 +25,7 @@ if ($result->num_rows > 0) {
     	$l = $row["isbn"];
     	$sql = "SELECT * FROM Laina WHERE Books_isbn = '$l'";
     	$loan = $conn->query($sql);
-    	echo "$loan";
+    	echo "moi";
 //    	if ($loan["Books_isbn"] == $l) {
 	    	if (!empty($loan)) {
 			echo "lainassa";
