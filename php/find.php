@@ -1,7 +1,4 @@
 <?php
-// Report all PHP errors (see changelog)
-error_reporting(E_ALL);
-
 require('test_input.php');
 $servername = "127.0.0.1:49227";
 $username = "azure";
@@ -29,7 +26,7 @@ if ($result->num_rows > 0) {
     	$sql = "SELECT * FROM Laina WHERE Books_isbn = '$l'";
     	$loan = $conn->query($sql);
 //    	if ($loan["Books_isbn"] == $l) {
-	    	if (!$loan) {
+	    	if (!empty($loan)) {
 			echo "lainassa";
 		}
       echo "<br>";
