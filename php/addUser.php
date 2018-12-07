@@ -1,5 +1,3 @@
-käyttäjä 
- 
 <?php require 'test_input.php'
 $servername = "127.0.0.1:49227";
 $username = "azure";
