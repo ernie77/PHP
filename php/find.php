@@ -30,6 +30,7 @@ if ($result->num_rows > 0) {
     	$loan = $conn->query($sql);
     	if (!empty($loan)) {
 			echo "lainassa";
+			$loan=""
 		}
       echo "<br>";
 	}
