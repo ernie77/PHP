@@ -13,8 +13,11 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 // values will come from webform
+$isbn=$_POST["isbn"];
+$title=$_POST["title"];
+$author=$_POST["author"];
 $sql = "INSERT INTO Books (isbn, title, author)
-VALUES ('$_POST["isbn"]', '$_POST["title"]', '$_POST["author"]')";
+VALUES ($isbn, $title, $author)";
 
 
 if ($conn->query($sql) === TRUE) {
@@ -24,4 +27,5 @@ if ($conn->query($sql) === TRUE) {
 }
 
 $conn->close();
-?> 
+?>
+loadUrl('../index.html.html');
