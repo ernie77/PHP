@@ -13,9 +13,9 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 // values will come from webform
-$isbn=$_POST["isbn"];
-$title=$_POST["title"];
-$author=$_POST["author"];
+$isbn=mysqli_real_escape_string($_POST["isbn"]);
+$title=mysqli_real_escape_string($_POST["title"]);
+$author=mysqli_real_escape_string($_POST["author"]);
 $sql = "INSERT INTO Books (isbn, title, author)
 VALUES ('$isbn', '$title', '$author')";
 
