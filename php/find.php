@@ -10,8 +10,9 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+//$find will come from webform
 $find=mysqli_real_escape_string($conn, $_POST["find"]);
-$sql = "SELECT * FROM Books WHERE title LIKE '$find'"; //$title will come from webform
+$sql = "SELECT * FROM Books WHERE title LIKE '%$find%'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
