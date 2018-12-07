@@ -13,8 +13,9 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 // values will come from webform
-$fname=mysqli_real_escape_string($_POST["fname"]);
-$lname=mysqli_real_escape_string($_POST["lname"]);
+
+$fname=mysqli_real_escape_string($conn, $_POST["fname"]);
+$lname=mysqli_real_escape_string($conn, $_POST["lname"]);
 $sql = "INSERT INTO User (firstname, lastname)
 VALUES ('$fname', '$lname')";
 
