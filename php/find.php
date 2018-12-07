@@ -27,6 +27,8 @@ if ($result->num_rows > 0) {
     	$loan = $conn->query($sql);
     	if ($loan->num_rows > 0) {
 			echo "Lainassa!";
+		} else {
+			echo "Vapaa!";
 		}
       echo "<br>";
 	}
