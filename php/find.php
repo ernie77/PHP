@@ -26,15 +26,16 @@ if ($result->num_rows > 0) {
 	while($row = $result->fetch_assoc()) {
 		echo "isbn: " . $row["isbn"]. " - Title: " . $row["title"]. " Author: " . $row["author"];
     	$l = $row["isbn"];
-    	$sql = "SELECT * FROM Laina WHERE Books_isbn IS '$l'";
-    	$loan = $conn->query($sql);
-    	while ($r = $loan->fetch_assoc()) {
-			echo "lainassa";
-		}
+    	echo $l;
+//    	$sql = "SELECT * FROM Laina WHERE Books_isbn IS '$l'";
+  //  	$loan = $conn->query($sql);
+    //	while ($r = $loan->fetch_assoc()) {
+		//	echo "lainassa";
+//		}
       echo "<br>";
 	}
 } else {
-   echo "0 results '$option'";
+   echo "0 results";
 }
 $conn->close();
 ?> 
