@@ -29,7 +29,11 @@ if ($result->num_rows > 0) {
     	if ($loan->num_rows > 0) {
 			include '../return.html';
 		} else {
-			include '../borrow.html';
+			//include '../borrow.html';
+			echo "<form action='borrow.php' method='post'>
+					<input type='hidden' name='isbn' value=" . $row["isbn"] . ">
+					<input type='submit' value='Borrow'>
+					</form>"
 		}
       echo "</li><br>";
 	}
