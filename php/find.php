@@ -30,7 +30,7 @@ if ($result->num_rows > 0) {
 			//include '../return.html';
 			echo "<form action='return.php' method='post'>
 					<input type='hidden' name='isbn' value=" . $row["isbn"] . ">
-					<input type='submit' value='Borrow'>
+					<input type='submit' value='Return'>
 					</form>";
 		} else {
 			//include '../borrow.html';

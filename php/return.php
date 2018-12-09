@@ -12,6 +12,7 @@ if ($conn->connect_error) {
 }
 
 // values will come from webform
+$isbn = $_POST['isbn'];
 $sql = "DELETE FROM Laina Where Books_isbn = $isbn";
 
 if ($conn->query($sql) === TRUE) {
