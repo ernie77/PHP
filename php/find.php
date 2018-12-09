@@ -33,7 +33,7 @@ if ($result->num_rows > 0) {
 			echo "<form action='borrow.php' method='post'>
 					<input type='hidden' name='isbn' value=" . $row["isbn"] . ">
 					<input type='submit' value='Borrow'>
-					</form>"
+					</form>";
 		}
       echo "</li><br>";
 	}
