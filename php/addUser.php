@@ -28,7 +28,5 @@ if ($conn->query($sql) === TRUE) {
 }
 
 $conn->close();
-sleep(5);
-header('location: ../index.html');
-exit;
+header( "refresh:5; url=../index.html" );
 ?> 
