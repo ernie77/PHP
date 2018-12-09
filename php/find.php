@@ -33,7 +33,7 @@ if ($result->num_rows > 0) {
 		}
       echo "</li><br>";
 	}
-	echo "</ul>
+	echo "</ul>"
 } else {
    echo "0 results";
 }
