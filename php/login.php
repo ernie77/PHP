@@ -14,24 +14,20 @@ if ($conn->connect_error) {
 }
 
 session_start();
-if($_SERVER["REQUEST_METHOD"] == "POST")
-{
+if($_SERVER["REQUEST_METHOD"] == "POST") {
 // username and password sent from Form
-$username=test_input($_POST['username']);
-$password=test_input($_POST['password']);
+	$username=test_input($_POST['username']);
+	$password=test_input($_POST['password']);
 //$password=md5($password); // Encrypted Password
-$sql="SELECT id FROM user WHERE username='$username' and passcode='$password'";
-$result = $conn->query($sql);
+	$sql="SELECT id FROM user WHERE username='$username' and passcode='$password'";
+	$result = $conn->query($sql);
 
 // If result matched $username and $password, table row must be 1 row
-if ($result->num_rows > 0) {
-{
-header("location: ../index.html");
-}
-else
-{
-echo "Your Login Name or Password is invalid";
-}
+	if ($result->num_rows > 0) {
+		header("location: ../index.html");
+	} else {
+		echo "Your Login Name or Password is invalid";
+	}
 }
 ?>
 <form action="login.php" method="post">
