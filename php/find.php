@@ -37,7 +37,7 @@ if ($result->num_rows > 0) {
 			//include '../borrow.html';
 			echo "<form action='borrow.php' method='post'>
 					<input type='hidden' name='isbn' value=" . $row["isbn"] . ">
-					<input type='hidden' name='isbn' value=" . $row["user"] . ">
+					<input type='hidden' name='user' value=" . $row["user"] . ">
 					<input type='submit' value='Borrow'>
 					</form>";
 		}
