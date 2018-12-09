@@ -19,16 +19,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 	$username=test_input($_POST['username']);
 	$password=test_input($_POST['password']);
 //$password=md5($password); // Encrypted Password
-	$sql="SELECT id FROM user WHERE username='$username' and passcode='$password'";
+	$sql="SELECT id FROM user WHERE username='$username' AND passcode='$password'";
 	$result = $conn->query($sql);
 
 // If result matched $username and $password, table row must be 1 row
 	if ($result->num_rows > 0) {
-		//$row = $result->fetch_assoc();
-		//$_SESSION['id'] = $row['id'];
-		$row = mysqli_fetch_array($result);
-		$_SESSION['id'] = $row['id'];
+		$row = $result->fetch_assoc();
 		
+		$_SESSION['id'] = $row['id'];
+		setcookie('id', $row['id'], time() + (60 * 60 * 24 * 30));
 		
 		
 		header("location: ../index.html");
@@ -36,6 +35,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 		echo "Your Login Name or Password is invalid";
 	}
 }
+$conn->close();
 ?>
 <form action="login.php" method="post">
 <label>UserName :</label>
