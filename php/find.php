@@ -23,7 +23,7 @@ if ($result->num_rows > 0) {
     //echo "<script type='text/javascript'>document.getElementById('main').innerHTML = '";
     echo "<ul>";
 	while($row = $result->fetch_assoc()) {
-		echo "<li>isbn: " . $row["isbn"]. " - Title: " . $row["title"]. " - Author: " . $row["author"]. " - ";
+		echo "<li>isbn: " . $row["isbn"]. " - Title: " . $row["title"]. " - Author: " . $row["author"];
     	$l = $row["isbn"];
     	$sql = "SELECT * FROM laina WHERE books_isbn = $l";
     	$loan = $conn->query($sql);
@@ -36,7 +36,7 @@ if ($result->num_rows > 0) {
 				<input type='submit' value='Return'>
 				</form>";
 			} else {
-				echo "Lainassa";
+				echo "<br>On loan";
 			}
 		} else {
 			//include '../borrow.html';
