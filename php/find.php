@@ -29,11 +29,15 @@ if ($result->num_rows > 0) {
     	$loan = $conn->query($sql);
     	if ($loan->num_rows > 0) {
 			//include '../return.html';
-			echo "<form action='return.php' method='post'>
-					<input type='hidden' name='isbn' value=" . $row["isbn"] . ">
-					<input type='hidden' name='id' value=" . $_COOKIE['id'] . ">
-					<input type='submit' value='Return'>
-					</form>";
+			if($_COOKIE['id'] == $row['id']) {
+				echo "<form action='return.php' method='post'>
+				<input type='hidden' name='isbn' value=" . $row["isbn"] . ">
+				<input type='hidden' name='id' value=" . $_COOKIE['id'] . ">
+				<input type='submit' value='Return'>
+				</form>";
+			} else {
+				echo "Lainassa";
+			}
 		} else {
 			//include '../borrow.html';
 			echo "<form action='borrow.php' method='post'>
