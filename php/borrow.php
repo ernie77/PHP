@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 
 // values will come from webform
 $isbn = $_POST['isbn'];
-$user = $_POST['user'];
+$user = $_SESSION['username'];
 $sql = "INSERT INTO Laina (Books_isbn, User_id)
 VALUES ($isbn, $user)";
 
