@@ -13,7 +13,8 @@ if ($conn->connect_error) {
 
 // values will come from webform
 $isbn = $_POST['isbn'];
-$sql = "DELETE FROM Laina Where Books_isbn = $isbn";
+$user = $_POST['id'];
+$sql = "DELETE FROM Laina Where Books_isbn = '$isbn' AND User_id = '$user'";
 
 if ($conn->query($sql) === TRUE) {
     echo "Created successfully. Return in 5 seconds.";

@@ -31,6 +31,7 @@ if ($result->num_rows > 0) {
 			//include '../return.html';
 			echo "<form action='return.php' method='post'>
 					<input type='hidden' name='isbn' value=" . $row["isbn"] . ">
+					<input type='hidden' name='id' value=" . $_COOKIE['id'] . ">
 					<input type='submit' value='Return'>
 					</form>";
 		} else {
