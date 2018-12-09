@@ -22,7 +22,7 @@ $password=test_input($_POST['password']);
 //$password=md5($password); // Encrypted Password
 $sql="SELECT id FROM admin WHERE username='$username' and passcode='$password'";
 $result = $conn->query($sql);
-
+echo $result;
 // If result matched $username and $password, table row must be 1 row
 if ($result->num_rows > 0) {
 {
