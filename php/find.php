@@ -40,6 +40,10 @@ if ($result->num_rows > 0) {
 					<input type='submit' value='Borrow'>
 					</form>";
 		}
+		echo "<form action='removeBook.php' method='post'>
+					<input type='hidden' name='isbn' value=" . $row["isbn"] . ">
+					<input type='submit' value='Remove'>
+					</form>";
       echo "</li><br>";
 	}
 	echo "</ul>";
