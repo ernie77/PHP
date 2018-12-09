@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 
 // values will come from webform
 $isbn = $_POST['isbn'];
-$sql = "DELETE FROM Books Where isbn = $isbn";
+$sql = "DELETE FROM Books Where isbn = '$isbn'";
 
 if ($conn->query($sql) === TRUE) {
     echo "Created successfully. Return in 5 seconds.";
