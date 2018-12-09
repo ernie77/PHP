@@ -12,13 +12,13 @@ if ($conn->connect_error) {
 }
 
 // values will come from webform
-$sql = "INSERT INTO Laina (Books_isbn, User_id)
+$sql = "DELETE FROM Laina (Books_isbn, User_id)
 VALUES ($isbn, $user)";
 
 if ($conn->query($sql) === TRUE) {
-    echo "Table MyGuests created successfully";
+    echo "Created successfully";
 } else {
-    echo "Error creating table: " . $conn->error;
+    echo "Error creating: " . $conn->error;
 }
 
 $conn->close();
