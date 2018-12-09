@@ -20,7 +20,7 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
-    echo "<script type="text/javascript">document.getElementById('main').innerHTML = '";
+    echo "<script type='text/javascript'>document.getElementById('main').innerHTML = '";
     echo "<ul>";
 	while($row = $result->fetch_assoc()) {
 		echo "<li>isbn: " . $row["isbn"]. " - Title: " . $row["title"]. " - Author: " . $row["author"]. " - ";
