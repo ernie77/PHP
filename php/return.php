@@ -12,8 +12,7 @@ if ($conn->connect_error) {
 }
 
 // values will come from webform
-$sql = "DELETE FROM Laina (Books_isbn, User_id)
-VALUES ($isbn, $user)";
+$sql = "DELETE FROM Laina Where Books_isbn = $isbn";
 
 if ($conn->query($sql) === TRUE) {
     echo "Created successfully";

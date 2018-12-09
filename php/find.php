@@ -27,11 +27,16 @@ if ($result->num_rows > 0) {
     	$sql = "SELECT * FROM laina WHERE books_isbn = $l";
     	$loan = $conn->query($sql);
     	if ($loan->num_rows > 0) {
-			include '../return.html';
+			//include '../return.html';
+			echo "<form action='return.php' method='post'>
+					<input type='hidden' name='isbn' value=" . $row["isbn"] . ">
+					<input type='submit' value='Borrow'>
+					</form>";
 		} else {
 			//include '../borrow.html';
 			echo "<form action='borrow.php' method='post'>
 					<input type='hidden' name='isbn' value=" . $row["isbn"] . ">
+					<input type='hidden' name='isbn' value=" . $row["user"] . ">
 					<input type='submit' value='Borrow'>
 					</form>";
 		}
