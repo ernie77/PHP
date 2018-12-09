@@ -24,7 +24,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 // If result matched $username and $password, table row must be 1 row
 	if ($result->num_rows > 0) {
-		$row = $result->fetch_assoc();
+		//$row = $result->fetch_assoc();
+		//$_SESSION['id'] = $row['id'];
+		$row = mysqli_fetch_array($result);
 		$_SESSION['id'] = $row['id'];
 		
 		
