@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 }
 
 session_start();
-//if($_SERVER["REQUEST_METHOD"] == "POST") {
+if($_SERVER["REQUEST_METHOD"] == "POST") {
 // username and password sent from Form
 	$username=test_input($_POST['username']);
 	$password=test_input($_POST['password']);
@@ -28,7 +28,7 @@ session_start();
 	} else {
 		echo "Your Login Name or Password is invalid";
 	}
-//}
+}
 ?>
 <form action="login.php" method="post">
 <label>UserName :</label>
