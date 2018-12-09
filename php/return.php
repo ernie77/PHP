@@ -16,10 +16,11 @@ $isbn = $_POST['isbn'];
 $sql = "DELETE FROM Laina Where Books_isbn = $isbn";
 
 if ($conn->query($sql) === TRUE) {
-    echo "Created successfully";
+    echo "Created successfully. Return in 5 seconds.";
 } else {
     echo "Error creating: " . $conn->error;
 }
 
 $conn->close();
+header( "refresh:5; url=../index.html" );
 ?> 

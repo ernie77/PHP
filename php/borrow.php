@@ -18,10 +18,11 @@ $sql = "INSERT INTO Laina (Books_isbn, User_id)
 VALUES ($isbn, $user)";
 
 if ($conn->query($sql) === TRUE) {
-    echo "Created successfully";
+    echo "Created successfully. Return in 5 seconds.";
 } else {
     echo "Error creating: " . $conn->error;
 }
 
 $conn->close();
+header( "refresh:5; url=../index.html" );
 ?> 

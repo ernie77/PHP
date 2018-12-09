@@ -20,12 +20,10 @@ VALUES ('$isbn', '$title', '$author')";
 
 
 if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
+    echo "Created successfully. Return in 5 seconds.";
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
 $conn->close();
-sleep(5);
-header('location: ../index.html');
-exit;
+header( "refresh:5; url=../index.html" );
 ?>
