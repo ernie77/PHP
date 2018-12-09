@@ -36,10 +36,3 @@ $error="Your Login Name or Password is invalid";
 <input type="password" name="password"/><br/>
 <input type="submit" value=" Login "/><br />
 </form>
-<?php
-session_start();
-if(session_destroy())
-{
-header("Location: login.php");
-}
-?>
