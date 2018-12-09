@@ -27,9 +27,10 @@ if ($result->num_rows > 0) {
     	$l = $row["isbn"];
     	$sql = "SELECT * FROM laina WHERE books_isbn = $l";
     	$loan = $conn->query($sql);
+    	$r = $loan->fetch_assoc();
     	if ($loan->num_rows > 0) {
 			//include '../return.html';
-			if($_COOKIE['id'] == $row['id']) {
+			if($_COOKIE['id'] == $r['id']) {
 				echo "<form action='return.php' method='post'>
 				<input type='hidden' name='isbn' value=" . $row["isbn"] . ">
 				<input type='hidden' name='id' value=" . $_COOKIE['id'] . ">
