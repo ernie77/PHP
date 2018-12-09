@@ -30,7 +30,7 @@ if ($result->num_rows > 0) {
     	$r = $loan->fetch_assoc();
     	if ($loan->num_rows > 0) {
 			//include '../return.html';
-			if($_COOKIE['id'] == $r['id']) {
+			if($_COOKIE['id'] == $r['User_id']) {
 				echo "<form action='return.php' method='post'>
 				<input type='hidden' name='isbn' value=" . $row["isbn"] . ">
 				<input type='hidden' name='id' value=" . $_COOKIE['id'] . ">
