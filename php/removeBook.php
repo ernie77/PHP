@@ -22,4 +22,5 @@ if ($conn->query($sql) === TRUE) {
 }
 
 $conn->close();
+  header( "refresh:5; url=../index.html" ); 
 ?> 
