@@ -26,7 +26,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 	if ($result->num_rows > 0) {
 		$row = $result->fetch_assoc();
 		$_SESSION['id'] = $row['id'];
-		echo "$_SESSION['id']"
+		
 		
 		
 		header("location: ../index.html");
