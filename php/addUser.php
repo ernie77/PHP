@@ -14,10 +14,12 @@ if ($conn->connect_error) {
 
 
 // values will come from webform
-$fname=test_input($_POST["fname"]);
+$username=test_input($_POST["username"]);
+$passcode=test_input($_POST["passcode"]);
+$lname=test_input($_POST["fname"]);
 $lname=test_input($_POST["lname"]);
-$sql = "INSERT INTO User (firstname, lastname)
-VALUES ('$fname', '$lname')";
+$sql = "INSERT INTO User (firstname, lastname, username, passcode)
+VALUES ('$fname', '$lname', '$username', '$passcode')";
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
