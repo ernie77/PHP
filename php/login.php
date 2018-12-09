@@ -21,7 +21,7 @@ $count=mysqli_num_rows($conn,$result);
 // If result matched $username and $password, table row must be 1 row
 if($count==1)
 {
-header("location: welcome.php");
+header("location: ../index.html");
 }
 else
 {
