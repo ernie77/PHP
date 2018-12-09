@@ -20,20 +20,20 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
-    echo "<ul>"
+    echo "<ul>";
 	while($row = $result->fetch_assoc()) {
 		echo "<li>isbn: " . $row["isbn"]. " - Title: " . $row["title"]. " - Author: " . $row["author"]. " - ";
     	$l = $row["isbn"];
     	$sql = "SELECT * FROM laina WHERE books_isbn = $l";
     	$loan = $conn->query($sql);
     	if ($loan->num_rows > 0) {
-			//include '../return.html';
+			include '../return.html';
 		} else {
-			//include '../borrow.html';
+			include '../borrow.html';
 		}
       echo "</li><br>";
 	}
-	echo "</ul>"
+	echo "</ul>";
 } else {
    echo "0 results";
 }
