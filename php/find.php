@@ -25,7 +25,7 @@ if ($result->num_rows > 0) {
 	while($row = $result->fetch_assoc()) {
 		echo "<li>isbn: " . $row["isbn"]. " - Title: " . $row["title"]. " - Author: " . $row["author"];
     	$l = $row["isbn"];
-    	$sql = "SELECT * FROM laina WHERE books_isbn = $l";
+    	$sql = "SELECT * FROM laina WHERE books_isbn = '$l'";
     	$loan = $conn->query($sql);
     	$r = $loan->fetch_assoc();
     	if ($loan->num_rows > 0) {
